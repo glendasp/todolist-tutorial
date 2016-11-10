@@ -4,13 +4,17 @@ from django.utils import timezone
 
 #  Table name, has to wrap models.Model to get the functionality of Django.
 
-
 class todo(models.Model):
-    task_name = models.CharField(max_length=100, unique=True)# Like a VARCHAR field
-    task_description = models.TextField()# Like a TEXT field
-    date_created = models.DateTimeField()# Like a DATETIME field
+    # Task_name will be our task title. Allow only 10 chars.
+    # Setting as unique constrain to avoid two tasks with the same name.
+    task_name = models.CharField(max_length=100, unique=True)
+    task_description = models.TextField(max_length=255)
+    date_created = models.DateTimeField()
 
-# Tell it to return as a unicode string
-# (The name of the to-do item) rather than just Object.
+# Returning the name of the task
     def __unicode__(self):
-        return self.name
+        return self.task_name
+
+# Telling Django to ordered our tasks by date
+    class Meta:
+        ordering = ['date_created']
