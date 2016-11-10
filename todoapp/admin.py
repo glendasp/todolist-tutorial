@@ -1,8 +1,7 @@
 from django.contrib import admin
-
-# Register your models here.
-
-from models import todolist
+from .models import todo
 
 # Register model with the admin
-admin.site.register(todolist)
+# To make our model visible on the admin page,
+# we need to register the model with:
+admin.site.register(todo)

@@ -1,1 +1,8 @@
 <h2>todo</h2>
+
+{% for x in items %}
+<p>{{ x.task_name }} - {{ x.date_created|date:"D d M Y" }}</p>
+
+<p>{{ x.task_description }}</p>
+<hr />
+{% endfor %}
