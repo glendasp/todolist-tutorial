@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from todoapp import views
 
 
 urlpatterns = [
     # Allow us to access the admin page
     url(r'^admin/', admin.site.urls),
-    # Index page
-    url(r'^index', views.index, name='index'),
-    # url(r'^index/', include('index.urls')),
+    # match all URL patterns and route them to the todoapp
+    # and let the app handle it with it's own urls.py
+    url(r'', include('todoapp.urls')),
 ]

@@ -9,7 +9,7 @@ class todo(models.Model):
     # Setting as unique constrain to avoid two tasks with the same name.
     task_name = models.CharField(max_length=100, unique=True)
     task_description = models.TextField(max_length=255)
-    date_created = models.DateTimeField()
+    date_created = models.DateTimeField(auto_now_add=True)
 
 # Returning the name of the task
     def __unicode__(self):
