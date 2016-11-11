@@ -7,4 +7,7 @@ def index(request):
 
     # Responds with passing the object items (contains info from the DB) to the
     # template index.html
-    return render(request, 'todoapp/index.html', {'items': items})
+    # def index(request):
+    if request.method == 'add'
+        items = request.POST.get('add')
+        return render(request, 'todoapp/index.html', {'items': items})
