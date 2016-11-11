@@ -1,8 +1,27 @@
-<p><h3>Your TODO Items:</h3></p>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>My todo list</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+    </head>
 
-{% for x in items %}
-<p>{{ x.task_name }} - {{ x.date_created|date:"D d M Y" }}</p>
+    <body class="align">
+      <div class="grid">
+      <br />
+      <form class="Add" action="results" method="post">
+      <input type="form__input" name="name" value="" placeholder="Enter your item here">
+      <input type="submit" value="add" class="button">
+      <hr />
+      <p><h3>Your TODO Items:</h3></p>
 
-<p>{{ x.task_description }}</p>
-<hr />
-{% endfor %}
+      {% for x in items %}
+      <p>{{ x.task_name }} - {{ x.date_created|date:"D d M Y" }}</p>
+
+      <p>{{ x.task_description }}</p>
+      <hr />
+      {% endfor %}
+    </div>
+    </body>
+</html>
