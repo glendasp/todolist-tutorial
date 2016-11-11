@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from . import views
+from todoapp import views
 
 
 urlpatterns = [
@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # Index page
     url(r'^index', views.index, name='index'),
+    # url(r'^index/', include('index.urls')),
 ]
