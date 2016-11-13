@@ -12,8 +12,8 @@ class todo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
 # Returning the name of the task
-    def __unicode__(self):
-        return self.task_name
+    # def __unicode__(self):
+    #     return self.task_name
 
 # Telling Django to ordered our tasks by date
     class Meta:
