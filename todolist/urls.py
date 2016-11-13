@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# admin.autodiscover()
 
 urlpatterns = [
     # Allow us to access the admin page
@@ -23,4 +24,6 @@ urlpatterns = [
     # match all URL patterns and route them to the todoapp
     # and let the app handle it with it's own urls.py
     url(r'', include('todoapp.urls')),
+    # Delet items
+    url(r'^delete_todo/', views.delete_todo, todo='delete_todo')
 ]
