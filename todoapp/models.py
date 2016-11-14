@@ -16,5 +16,5 @@ class todo(models.Model):
         return self.task_name
 
 # Telling Django to ordered our tasks by date
-    # class Meta:
-    #     ordering = ['date_created']
+    class Meta:
+        ordering = ['date_created']
