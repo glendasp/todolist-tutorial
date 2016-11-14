@@ -18,9 +18,13 @@ def index(request):
     return render(request, 'todoapp/index.html', {'items': items})
 
 
-def delete_todo(self, request):
+def delete_todo(request):
     if request.method == 'POST':
-        id = request.POST['id']
-        # delete an object and send a confirmation response
-        MyModel.objects.get(pk=request.DELETE['pk']).delete()
-        return HttpResponseRedirect('/')
+        # get the id for the task
+        id = request.POST.get("id")
+        # delete the data
+        todo.objects.get(id=id).delete()
+        # Gets the todos we need from the database
+        items = todo.objects.all()
+        # render the page with the todos list
+        return render(request, 'todoapp/index.html', {'items': items})

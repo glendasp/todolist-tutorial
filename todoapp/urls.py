@@ -8,5 +8,5 @@ urlpatterns = [
     # Our main page
     url(r'^$', views.index, name='index'),
     # Delet items
-    url(r'^delete_todo/', views.delete_todo, todo='delete_todo')
+    url(r'^delete_todo/', views.delete_todo, name='delete_todo')
 ]
